@@ -128,4 +128,4 @@ Vue.use(ddPopup)
 // 启动前需要确保已经在 `vue.config.js` 中添加了新入口 `examples/main.js`
 
 ## dd-popup 组件效果
- ![Image text](https://github.com/da-dong-dong/dd-plugin/MD_imgs/11.png)
+ ![Image text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/11.png)

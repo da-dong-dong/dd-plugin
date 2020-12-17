@@ -119,13 +119,40 @@ Vue.use(ddPopup)
 然后就能直接使用刚才开发的 textarea 组件
 
 ``` javascript 
-    //使用
-    <dd-popup title="呲呲呲" v-if="flag" @ok="ok" @cancel="cancel"/>
+//使用
+<dd-popup title="呲呲呲" v-if="flag" @ok="ok" @cancel="cancel"/>
  ```
+ 
+### 参数
+ | 参数 | 说明 | 类型 | 默认值 |
+| ------ | ------ | ------ | ------ |
+| title | 内容 | String | '' |
+
+### 事件events
+
+| 事件名称 | 说明 | 回调方法 |
+| ------ | ------ | ------ |
+| ok | 确认按钮 | function |
+| cancel | 取消按钮 | function |
  
  这时候可以 `yarn serve` 启动项目，测试一下组件是否有 `bug`
 
 // 启动前需要确保已经在 `vue.config.js` 中添加了新入口 `examples/main.js`
 
-## dd-popup 组件效果
- ![Image text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/11.png)
+### dd-popup 组件效果
+ ![dd-popup text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/11.png)
+
+ ## 五、打包组件
+[百度2][2]{:target="_blank"}
+[2]: http://www.baidu.com/   "百度二下"
+ vue-cli 3.x 提供了一个库文件打包命令
+
+主要需要四个参数：
+
+1. `target`: 默认为构建应用，改为 `lib` 即可启用构建库模式
+
+2. `name`: 输出文件名
+
+3. `dest`: 输出目录，默认为 `dist`，这里我们改为 `lib`
+
+4. `entry`: 入口文件路径，默认为 `src/App.vue`，这里改为 `packages/index.js`

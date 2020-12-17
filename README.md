@@ -143,9 +143,8 @@ Vue.use(ddPopup)
  ![dd-popup text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/11.png)
 
  ## 五、打包组件
-[百度2][2]{:target="_blank"}
-[2]: http://www.baidu.com/   "百度二下"
- vue-cli 3.x 提供了一个库文件打包命令
+
+ vue-cli 3.x 提供了一个库[文件打包命令](https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93)
 
 主要需要四个参数：
 
@@ -156,3 +155,105 @@ Vue.use(ddPopup)
 3. `dest`: 输出目录，默认为 `dist`，这里我们改为 `lib`
 
 4. `entry`: 入口文件路径，默认为 `src/App.vue`，这里改为 `packages/index.js`
+
+基于此，在 package.json 里的 scripts 添加一个 lib 命令
+
+``` json
+// pageage.json
+
+{
+  "scripts": {
+   "lib": "vue-cli-service build --target lib --name dd-popup-plugin --dest lib packages/index.js"
+  }
+}
+```
+然后执行 `npm run lib` 命令，编译组件
+
+打包后 目录结构文件
+ ![img text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/22.png)
+
+
+ ### 没有npm账号怎么办？别急，教你
+
+ ## 注册npm
+ 首先去npm注册一个[用户](https://www.npmjs.com/package/dd-popup)
+核心操作就这么几步骤，一做就会
+然后在本地添加用户：
+``` cmd
+npm adduser
+username:
+password:
+email:
+```
+注册完后，npm官网的小姐姐会让你验证邮箱，验证完成后，需要退出登录重新登录
+查看当前环境下的用户：
+```
+npm whoami
+```
+ ![npm text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/33.png)
+
+登录：
+```
+npm login
+```
+发布：
+```
+npm publish
+```
+
+本人发布时候重新新建文件夹，这个文件只负责构建组件，另外一个负责上传npm组件
+### 一：初始化package.json
+``` js
+npm init -y
+```
+ ![npm init text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/44.png)
+
+ ### 二：首先需要在 package.json 添加组件信息
+
+`name`: 包名，该名不能和已有的名称冲突；
+
+`version`: 版本号，不能和历史版本号相同；
+
+`description`: 简介；
+
+`main`: 入口文件，应指向编译后的包文件；
+
+`keyword`：关键字，以空格分割；
+
+`author`：作者；
+
+`private`：是否私有，需要修改为 false 才能发布到 npm；
+
+`license`：开源协议。
+
+ ![send text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/55.png)
+
+在发布之前，一定要确保组件已经编译完毕，而且 package.json 中的入口文件（main）的路径正确
+
+一切就绪，发布组件：
+```
+npm publish
+```
+
+emmmmmm....
+
+### 最后查看npm
+看看是否 推送上去
+
+ ![npm send text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/66.png)
+
+ #### 安装使用
+　　
+
+　安装：
+```
+npm install  dd-popup --save
+或者
+yarn add dd-popup
+```
+
+　使用：
+
+　　`main.js` 全局引入
+
+ ![ok text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/77.png)

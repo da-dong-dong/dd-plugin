@@ -240,6 +240,10 @@ emmmmmm....
 ### 最后查看npm
 看看是否 推送上去
 
+贡献两位大佬网站
+[呲呲呲](https://www.cnblogs.com/wisewrong/p/10186611.html)
+[嘤嘤嘤](https://www.cnblogs.com/adouwt/p/9211003.html)
+
  ![npm send text](https://github.com/da-dong-dong/dd-plugin/blob/master/MD_imgs/66.png)
 
  #### 安装使用
